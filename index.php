@@ -1,18 +1,6 @@
 <?php
 
-$n = $_GET['numbersOfCharacters'];
-function getRandomPassword($n)
-{
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $randomPassword = '';
-
-    for ($i = 0; $i < $n; $i++) {
-        $index = rand(0, strlen($characters) - 1);
-        $randomPassword .= $characters[$index];
-    }
-
-    return $randomPassword;
-}
+include 'functions.php';
 
 ?>
 
@@ -33,7 +21,7 @@ function getRandomPassword($n)
         <div class="p-3 d-flex justify-content-center">
             <form action="index.php" method="GET" class="text-center">
                 <label for="password" class="form-label d-inline me-5">Lunghezza password:</label>
-                <input type="text" id="password" name="numbersOfCharacters" class="form-control-sm d-inline-block">
+                <input type="number" id="password" name="numbersOfCharacters" class="form-control-sm d-inline-block">
                 <button class="d-block my-3 btn btn-primary" type="submit">Invia</button>
             </form>
         </div>
